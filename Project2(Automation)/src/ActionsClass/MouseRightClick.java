@@ -47,6 +47,10 @@ public class MouseRightClick {
         
 		Thread.sleep(4000);
 		
+		System.out.println("Hello");
+		
+		System.out.println("Good Morning");
+		
 		driver.quit();
 		
 		
