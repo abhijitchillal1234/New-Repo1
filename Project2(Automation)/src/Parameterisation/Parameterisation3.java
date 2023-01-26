@@ -1,0 +1,22 @@
+package Parameterisation;
+import java.io.FileInputStream;
+import java.io.IOException;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class Parameterisation3 {
+
+	public static void main(String[] args) throws EncryptedDocumentException, IOException{
+		
+	
+		
+		String Path = "C:\\Users\\Ramesh\\Desktop\\Sheet2.xlsx";
+		
+		FileInputStream file = new FileInputStream(Path);
+		
+		double Data = WorkbookFactory.create(file).getSheetAt(0).getRow(1).getCell(1).getNumericCellValue();
+		
+		System.out.println(Data);
+	}
+
+}

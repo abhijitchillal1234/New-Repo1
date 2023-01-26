@@ -1,0 +1,46 @@
+package Synchronization;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ImplicitWait2 {
+	
+	//ImplicitWait--------------
+	 //it is declare globally to apply all the element from that perticular webdriver
+	 //if the element is found quickly than it ignore the next sec/min etc. (Thread is not ignoring those sec/min).
+	 //if the element is not found in that perticular time period than it thows the execption
+	 //Syntax::driver.manage().timeouts().implicitlyWait(Duration.TimeUnit.sec/min etc.)
+	
+	public static void main(String[] args) throws InterruptedException {
+
+    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ramesh\\Desktop\\Abhijit\\chromedriver_win32\\chromedriver.exe");
+    	
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.redbus.in/");
+		
+		driver.findElement(By.id("src")).sendKeys("Swargate, Pune");
+		
+		driver.findElement(By.id("dest")).sendKeys("Borivali East, Mumbai");
+		
+		driver.findElement(By.xpath("//span[@class=\"fl icon-calendar_icon-new icon-onward-calendar icon\"]")).click();
+		
+		driver.findElement(By.xpath("//td[text()=\"22\"]")).click();
+		
+		driver.findElement(By.id("search_btn")).click();
+		
+		
+		
+		
+		
+		
+	}
+
+}
